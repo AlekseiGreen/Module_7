@@ -6,12 +6,12 @@ const persons = [
     {name: 'DDD', age: 19}
 ];
 
-const persons18 = persons.filter(elem=>{
+const personsOverAge = persons.filter(elem=>{
     return elem.age >= 18;
 });
 
-const persons18Name = persons18.filter(elem=>{
+const personsTotal = personsOverAge.filter(elem=>{
     return delete elem.age;
 });
 
-console.log(persons18Name);
+console.log(personsTotal);

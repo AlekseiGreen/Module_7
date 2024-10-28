@@ -1,18 +1,24 @@
 //Задание 7.7.2
 function calculate(a, b, operator){
-    if(operator === "+"){
-        return(a + b);
+    switch (operator) {
+        case "+":
+            return a + b;
+        case "-":
+            return a - b;
+        case "*":
+            return a * b;
+        case "/":
+            if (b === 0) {
+                throw new Error("Деление на ноль невозможно");
+            }
+            return a / b;
+        default:
+            throw new Error("Неправильный оператор");
     }
-    if(operator === "-"){
-        return(a - b);
-    }
-    if(operator === "*"){
-        return(a * b);
-    }
-    if(operator === "/"){
-        return(a / b);
-    }
-    return 0;
 }
 
-console.log(calculate.apply(this, [3, 2, '+']))
+try {
+    console.log(calculate.apply(null, [3, 2, '+']));
+} catch (error) {
+    console.error(error.message);
+}

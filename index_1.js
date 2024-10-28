@@ -3,7 +3,7 @@ function printInfo() {
     console.log(`Name: ${this.name}, Age: ${this.age}`);
 }
 
-person ={
+const person ={
     name: 'AAA',
     age: 20
 }
